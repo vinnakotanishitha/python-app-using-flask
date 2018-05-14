@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Items </title>
+  <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}"/>
+</head>
+<body class="center">
+  <br><center><img src="{{ url_for('static', filename='thumbnail.png') }}"></center><br>
+	<h1>Details available:</h1>
+
+	<table border="1" class="center">
+    {% if request.form["option"] == "inventory_list" %}
+    <tr>
+      <td>Item Id</td>
+      <td>Brand</td>
+      <td>Model name</td>
+      <td>Quantity</td>
+    {% else %}
+		<tr>
+			<td>item_id</td>
+			<td>brand</td>
+			<td>description</td>
+			<td>price</td>
+			<td>shape</td>
+			<td>size</td>
+			<td>upc</td>
+			<td>weight</td>
+		</tr>
+    {% endif %}
+		{% for row in result %}
+  		<tr>
+  			{% for cell in row %}
+    				<td>{{ cell }}</td>
+  			{% endfor %}
+  		</tr>
+		{% endfor %}
+
+	</table>
+
+
+
+</body>

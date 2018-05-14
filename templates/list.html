@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+	<title>List type selection</title>
+	<link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+	</head>
+<body class="center">
+	<br><center><img src="{{ url_for('static', filename='thumbnail.png') }}"></center><br>
+<h1>Select the type of search for listing product details available<br></h1>
+<form action = "/list/items" method = 'POST'>
+    <input type="radio" name="option" value="item_id_based" checked = "checked">Based on Item id<br>
+    <input type="radio" name="option" value="brand_based">Based on brand<br>
+    <input type="radio" name="option" value="price_above">Price above<br>
+    <input type="radio" name="option" value="price_below">Price below<br>
+		<input type="radio" name="option" value="list_all_items">Available items<br>
+		<input type="radio" name="option" value="inventory_list">Inventory of items<br>
+
+    <input type = "text" name = "value"><br>
+    <input type = "submit" value = "submit">
+</form>
+
+</body>
+</html>

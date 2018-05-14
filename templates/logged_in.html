@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <title>{{result['loginType']}}</title>
+        <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body class="center">
+        <p class="right_logout"><a href="/login">LOGOUT</a></p>
+        <br><center><img src="{{ url_for('static', filename='thumbnail.png') }}"></center><br>
+        <h1> logged in as {{result['loginType']}} -- > {{result['username']}} </h1>
+        <h2>Options available:</h2>
+        {% if result['loginType'] == "customer" %}
+            <a href = "/details_req"> Details based on Checkout </a><br>
+            <a href = "/list"> List of items available</a>
+        {% elif result['loginType'] == "employee" %}
+            <a href = "/checkout_page">Perform Checkout</a><br>
+            <a href = "/list"> List of items available</a><br>
+            <a href = "/restock"> Click here for restocking the inventory</a>
+        {% endif%}
+    </body>
+</html>

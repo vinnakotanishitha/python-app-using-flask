@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <title>{{result['loginType']}}</title>
+        <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body class="center">
+      <p class="right_logout"><a href="/login">LOGOUT</a></p>
+      <br><center><img src="{{ url_for('static', filename='thumbnail.png') }}"></center><br>
+
+
+        <table border="1" class="center">
+          <tr>
+            <td>checkout Id</td>
+            <td>Store Id</td>
+            <td>Item id</td>
+            <td>quantity</td>
+            <td>Price</td>
+
+      		{% for row in result %}
+        		<tr>
+        			{% for cell in row %}
+          				<td>{{ cell }}</td>
+        			{% endfor %}
+        		</tr>
+      		{% endfor %}
+
+      	</table><br><br>
+        <p>Adding the above values in sequence</p>
+        {% set subtotal = 0 %}
+        {% set final_val = []%}
+        {% for row in result%}
+        {% set subtotal = subtotal + (row[3] * row[4]) %}<br>
+        {{subtotal}}
+        {% endfor %}
+
+    </body>
+</html>

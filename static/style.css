@@ -1,0 +1,23 @@
+h1{
+	color:blue;
+}
+
+body {
+    margin: auto;
+    width: 80%;
+		height: 80%;
+    border: 3px solid #73AD21;
+    padding: 10px;
+	}
+
+.center {
+    margin:auto;
+		align-self:center;
+		text-align: center;
+    padding: 10px;
+}
+
+.right_logout {
+    margin:auto;
+		text-align: right;
+}

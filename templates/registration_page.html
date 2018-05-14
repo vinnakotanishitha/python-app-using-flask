@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+<title>Regisration Page</title>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="center">
+  <br><center><img src="{{ url_for('static', filename='thumbnail.png') }}"></center><br>
+    <h1>Registration form:</h1>
+    <form action="/register" method='POST' class="center">
+      <strong>Customer Name</strong></br>
+        <input type="text" name="customer_name" size="60"><br><br>
+        <strong>Username : </strong>
+        <input type="username" name="username"><br><br>
+        <strong>Password : </strong>
+        <input type="password" name="password"><br><br>
+        <strong>Phone Number : </strong>
+        <input type="number" name = "phone_number" min = "7000000000" max = "9999999999"><br><br>
+
+        <input type="submit">
+    </form>
+</body>
+</html>

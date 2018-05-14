@@ -1,0 +1,24 @@
+<!doctype html>
+<title>Login Page</title>
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+
+<br><center><img src="{{ url_for('static', filename='thumbnail.png') }}"></center><br>
+    <div class="center">
+    <h2>Login</h2>
+    {% if error %}<p class=error><strong>Error:</strong> {{ error }}{% endif %}
+
+
+<form action = "/login_Action" method = "POST" >
+  Login Type:<br>
+  <input type="radio" name="loginType" value="customer" checked="checked"> Customer
+  <input type="radio" name="loginType" value="employee"> Employee<br>
+  <strong>Username:</strong><br>
+  <input type="username" name="username" placeholder="username">
+  <br>
+  <strong>Password:</strong><br>
+  <input type="password" name="password">
+  <br><br>
+  <input type="submit" value="Submit">
+</form>
+<div class="center"><a href="/registration_page">Sign up here</a></div>
+</div>

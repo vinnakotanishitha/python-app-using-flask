@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> This is the index page </title>
+  <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="center">
+  <br><center><img src="{{ url_for('static', filename='thumbnail.png') }}"></center><br>
+  <h1> This is the index page </h1>
+  <ul>List of available pages
+    <br><a href = "/login"> Click here for the login page </a></li>
+    <br><a href = "/list"> Click here for the list of items</a></li>
+  </ul>
+</body>
+</html>

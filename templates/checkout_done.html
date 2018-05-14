@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> This is the index page </title>
+  <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}"/>
+</head>
+<body class="center">
+
+  <p class="right_logout"><a href="/login">LOGOUT</a></p>
+  <br><center><img src="{{ url_for('static', filename='thumbnail.png') }}"></center><br>
+  <p>Checkout Performed Successfully <br>Checkout_ID = {{result}}</p><br><br>
+  <a href="/checkout_page"><b>Click here for another checkout</b></a>
+
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <title>{{result['loginType']}}</title>
+        <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body class="center">
+      <p class="right_logout"><a href="/login">LOGOUT</a></p>
+      <br><center><img src="{{ url_for('static', filename='thumbnail.png') }}"></center><br>
+        {% if result == 'Please enter either checkout_id or the other details' %}
+        {{result}}<br><br>
+        {% endif%}
+        <form action="/checkout_details_processing" method='POST' class="center">
+          <strong>Checkout_id if present  : </strong>
+          <input type="number" name="checkout_id" placeholder="0" value="0"><br><br>
+          <strong>Customer_id of the customer involved : </strong>
+          <input type="text" name="cust_id" placeholder="cust_id"><br><br>
+          <h2> Or Please enter the following details if checkout_id is needed along with customer id</h2>
+          <strong>Item_id of the product : </strong>
+          <input type="number" name="item_id" placeholder="item id" value="0"><br><br>
+          <strong>Id of the store  : </strong>
+          <input type="number" name="store_id" placeholder="0" value="0"><br><br>
+
+          <input type="submit">
+        </form>
+
+    </body>
+</html>

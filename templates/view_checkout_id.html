@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <title>{{result['loginType']}}</title>
+        <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body class="center">
+      <p class="right_logout"><a href="/login">LOGOUT</a></p>
+      <br><center><img src="{{ url_for('static', filename='thumbnail.png') }}"></center><br>
+
+        <table border="1" class="center">
+          <tr>
+            <td>checkout Id</td>
+            <td>Store Id</td>
+            <td>Item id</td>
+
+      		{% for row in result %}
+        		<tr>
+        			{% for cell in row %}
+          				<td>{{ cell }}</td>
+        			{% endfor %}
+        		</tr>
+      		{% endfor %}
+
+      	</table><br><br>
+        <a href="/details_req"> Click here to proceed to view details using the checkout obtained</a>
+    </body>
+</html>

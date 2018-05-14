@@ -1,0 +1,7 @@
+sample-pictures/
+get-pip.py
+*.ignore
+*.pyc
+connect.txt
+get-pip.py
+pycache/

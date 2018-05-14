@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> This is the index page </title>
+  <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}"/>
+</head>
+<body class="center">
+  <p class="right_logout"><a href="/login">LOGOUT</a></p>
+  <br><center><img src="{{ url_for('static', filename='thumbnail.png') }}"></center><br>
+  <h1>Enter the values of the items</h1>
+
+
+  <form action="/checkout_calculation" method='POST' class="center">
+    <strong>Employee_id for the checkout  : </strong>
+    <input type="text" name="emp_id"><br><br>
+    <strong>Customer_id for the customer involved (if present) : </strong>
+    <input type="text" name="cust_id"><br><br>
+    <strong>Id of the store  : </strong>
+    <input type="number" name="store_id"><br><br>
+
+    <h3>Enter Item_ids and Quantity of each item</h3>
+    {% for items in range(20) %}
+    <b>Item-{{items+1}}  :</b> <input type="number" name="item_id_{{items+1}}" value=0> <input type="number" name="quantity_{{items+1}}" value=0><br>
+    {% endfor %}
+    <br>
+    <input type="submit">
+  </form>
+</body>
+</html>
